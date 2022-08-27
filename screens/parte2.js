@@ -1,0 +1,82 @@
+import React, {DeviceEventEmitter, useState, useEffect } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View, Platform } from 'react-native';
+import * as Device from 'expo-device';
+import * as Location from 'expo-location';
+import { Barometer } from 'expo-sensors';
+
+export default function App() {
+  const [data, setData] = useState({});
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS === 'android' && !Device.isDevice) {
+        setErrorMsg(
+          'Oops, this will not work on Snack in an Android Emulator. Try it on your device!'
+        );
+        return;
+      }
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+
+    _subscribe();
+  }, []);
+
+  const _subscribe = () => {
+    this._subscription = Barometer.addListener(barometerData => {
+      setData(barometerData);
+    });
+  };
+
+  let text = 'Waiting..';
+  let lati = "";
+  let longi = "";
+  if (errorMsg) {
+    text = errorMsg;
+  } else if (location) {
+    text = JSON.stringify(location);
+    lati = "Latitude: "+ JSON.stringify(location["coords"]["latitude"]);
+    longi = "Longitude: "+ JSON.stringify(location["coords"]["longitude"]);
+  }
+
+  const { pressure = 0, relativeAltitude = 0 } = data;
+
+  return (
+    <View style={styles.sensor}>
+      <Text>Barometer:</Text>
+      <Text>Pressure: {pressure * 100} Pa</Text>
+      <Text> ahueahuheua</Text>
+      <Text style={styles.paragraph}>{lati}</Text>
+      <Text style={styles.paragraph}>{longi}</Text>
+
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    marginTop: 15,
+  },
+  button: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#eee',
+    padding: 10,
+  },
+  sensor: {
+    marginTop: 45,
+    paddingHorizontal: 10,
+  },
+});
+

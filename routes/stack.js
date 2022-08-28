@@ -7,18 +7,23 @@ import Parte from '../screens/parte2';
 import StoreDetails from '../screens/storeDetails';
 import SelectStore from '../screens/selectStore';
 import MyEvents from '../screens/myEvents';
+import EventDetails from '../screens/eventDetails';
 
 const screens = {
   MyEvents: {
     screen: MyEvents,
   },
 
+  EventDetails: {
+    screen: EventDetails,
+  },
   SelectStore: {
     screen: SelectStore,
   },
   StoreDetails: {
     screen: StoreDetails,
   },
+
 
   CheckServices: {
     screen: CheckServices,

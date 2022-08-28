@@ -2,7 +2,7 @@ import BouncyCheckbox from "react-native-bouncy-checkbox";
 import React from "react";
 import { TextInput, StyleSheet, Button, View, Text } from "react-native";
 
-export default function Check(name) {
+export default function Check(name, changeCheckList) {
   return (
     <View>
       <BouncyCheckbox
@@ -15,7 +15,7 @@ export default function Check(name) {
         textStyle={{
           textDecorationLine: "none",
         }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {changeCheckList(name,isChecked)}}
       />
     </View>
   );

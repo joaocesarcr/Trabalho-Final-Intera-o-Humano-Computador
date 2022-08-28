@@ -3,7 +3,9 @@ import React from "react";
 import { TouchableWithoutFeedback, TextInput, StyleSheet, Button, View, Text } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
-export default function Event({navigation}, eventObj) {
+export default function Event(props) {
+  const navigation = props.navigation
+  const eventObj = props.x
   return (
     <TouchableWithoutFeedback 
       onPress={ () => navigation.push("EventDetails",{navigation, "details": eventObj})}

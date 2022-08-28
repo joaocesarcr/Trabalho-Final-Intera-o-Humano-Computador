@@ -19,7 +19,12 @@ export default function myEvents({navigation}) {
 
   );
   function mapMyEvents() {
-    return myEventsList.map( (x) => Event({navigation},x));
+    return myEventsList.map( (x) => 
+      <Event
+        navigation = {navigation}
+        x = {x}
+        key = {x.nome}
+      /> )
   }
 
   function addEvent(nome, servicosSelecionados) {

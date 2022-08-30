@@ -36,7 +36,7 @@ export default function myEvents({navigation}) {
       <Button
         onPress={ () => navigation.push("CheckServices",{navigation, "func": addEvent})}
         title="+"
-        color="#841584"
+        color="#200048"
         accessibilityLabel="Learn more about this purple button"
         style = {styles.addButton}
       />
@@ -44,6 +44,20 @@ export default function myEvents({navigation}) {
   );
 }
 
+
+const styles = StyleSheet.create({
+  addButton: {
+    marginTop: 16,
+    borderWidth: 4,
+    borderColor: "#20232a",
+    borderRadius: 10,
+    backgroundColor: "#fff",
+    color: "#20232a",
+    fontSize: 30,
+    fontWeight: "bold",
+    width: "5%",
+  },
+});
 /*
  *
         onPress={ () => addEvent("asd","asd")}
@@ -59,16 +73,3 @@ myEventsList = [
 ]
 */
 
-const styles = StyleSheet.create({
-  addButton: {
-    marginTop: 16,
-    borderWidth: 4,
-    borderColor: "#20232a",
-    borderRadius: 6,
-    backgroundColor: "#fff",
-    color: "#20232a",
-    fontSize: 30,
-    fontWeight: "bold",
-    width: "10%",
-  },
-});

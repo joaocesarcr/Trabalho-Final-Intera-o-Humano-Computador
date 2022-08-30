@@ -10,8 +10,8 @@ export default function Event(props) {
     <TouchableWithoutFeedback 
       onPress={ () => navigation.push("EventDetails",{navigation, "details": eventObj})}
     >
-      <View style={styles.evento}>
-        <Text> {eventObj.nome} </Text>
+      <View style={styles.menu}>
+        <Text style={styles.text} > {eventObj.nome} </Text>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -21,10 +21,27 @@ const styles = StyleSheet.create({
     marginTop: 16,
     borderWidth: 4,
     borderColor: "#20232a",
-    borderRadius: 6,
     color: "#20232a",
-    fontSize: 30,
     fontWeight: "bold",
+  },
+  text: {
+    color: "#ffffff",
+    marginLeft: 10,
+    fontSize: 30,
+  },
+  menu: {
+    fontWeight: "bold",
+    justifyContent: "center",
+    marginLeft: "5%",
+    width: "90%",
+    height: 80,
+    marginBottom: 10,
+
+    /* menus */
+
+    backgroundColor: "#4C1690",
+    borderWidth: 1,
+    borderColor:"#000000",
   },
 });
 

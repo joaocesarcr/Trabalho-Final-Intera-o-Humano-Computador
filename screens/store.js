@@ -1,34 +1,43 @@
 import React from "react";
-import { useNavigation } from '@react-navigation/native';
-import { TextInput, StyleSheet, Button, View, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { TouchableWithoutFeedback, TextInput, StyleSheet, Button, View, Text } from "react-native";
 
-export default function Store(store,{navigation}) {
+export default function Store(props) {
+  const store = props.x;
+  const navigation = props.navigation;
   if (store) {
-  return (
-    <View style={styles.container}>
-      <Text> {store.nome}</Text>
-      <Text> {store.endereco}</Text>
-      <Text> ⭐ {store.nota}</Text>
-      <Button
-        onPress={ () => navigation.navigate("StoreDetails", { storeDetails: store })}
-        title=""
-        color="#841584"
-        accessibilityLabel="Learn more about this purple button"
-      />
-
-    </View>
-  );
-  }
-  else return (
-  <View style={styles.container}>
-    <Text> aaaa </Text>
-    </View>
-  )
+    return (
+      <TouchableWithoutFeedback
+        onPress={() =>
+          navigation.navigate("StoreDetails", { storeDetails: store })
+        }
+      >
+        <View style={styles.container}>
+          <Text> {store.nome}</Text>
+          <Text> {store.endereco}</Text>
+          <Text> ⭐ {store.nota}</Text>
+        </View>
+      </TouchableWithoutFeedback>
+    );
+  } else
+    return (
+      <View style={styles.container}>
+        <Text> aaaa </Text>
+      </View>
+    );
 }
 
 /*
  *
-      
+           <Button
+            onPress={() =>
+              navigation.navigate("StoreDetails", { storeDetails: store })
+            }
+            title=""
+            color="#841584"
+            accessibilityLabel="Learn more about this purple button"
+          />
+     
       <Text> {store.tags[0]}</Text>
       */
 

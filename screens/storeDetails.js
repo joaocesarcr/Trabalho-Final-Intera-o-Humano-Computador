@@ -1,16 +1,19 @@
 import React from "react";
 import { TextInput, StyleSheet, Button, View, Text } from "react-native";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 
-export default function StoreDetails({navigation}) {
-  store = navigation.getParam('storeDetails');
+export default function StoreDetails({ navigation }) {
+  store = navigation.getParam("storeDetails");
   return (
-    <View style={styles.container}>
-      <Text>Nome: {store.nome}</Text>
-      <Text>Endereço: {store.endereco}</Text>
-      <Text> {store.tags[0]}</Text>
-      <Text> ⭐ {store.nota}</Text>
-      <Text>Contato: {store.contato}</Text>
+    <View style={styles.center}>
+      <View style={styles.photo}></View>
+      <View style={styles.container}>
+        <Text>Nome: {store.nome}</Text>
+        <Text>Endereço: {store.endereco}</Text>
+        <Text> {store.tags[0]}</Text>
+        <Text> ⭐ {store.nota}</Text>
+        <Text>Contato: {store.contato}</Text>
+      </View>
     </View>
   );
 }
@@ -25,6 +28,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     color: "#20232a",
     fontSize: 30,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    width: "100%",
+  },
+  photo: {
+    width: 300,
+    height: 300,
+    backgroundColor: "#aaa",
+  },
+  center: {
+    alignItems: 'center',
   }
 });

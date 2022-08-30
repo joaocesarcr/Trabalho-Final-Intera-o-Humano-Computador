@@ -9,7 +9,9 @@ import {
   Text,
 } from "react-native";
 
-export default function Service({ navigation }, nome) {
+export default function Service(props) {
+  const navigation = props.navigation;
+  const nome = props.x;
   return (
     <TouchableWithoutFeedback
       onPress={() => navigation.push("SelectStore", { navigation, nome: nome })}

@@ -14,7 +14,7 @@ export default function checkServices({navigation}) {
   }
 
   function mapServicos() {
-    return servicos.map( (x) => Check(x, changeCheckList));
+    return servicos.map( (x) => <Check name={x} changeCheckList={changeCheckList} key={x} /> )
   }
 
   return (

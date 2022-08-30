@@ -3,24 +3,30 @@ import React from "react";
 import { TextInput, StyleSheet, Button, View, Text } from "react-native";
 import Service from "./service";
 
-export default function EventDetails({navigation}, name, checkList) {
+export default function EventDetails({ navigation }, name, checkList) {
   function mapCheckboxes() {
-    return navigation.getParam("details")["servicosSelecionados"].map( (x) =>  Service({navigation}, x))
+    return navigation
+      .getParam("details")
+      ["servicosSelecionados"].map((x) => (
+        <Service navigation={navigation} x={x} key={x.nome} />
+      ));
   }
 
   return (
     <View>
-      <Text style={styles.titulo}> {navigation.getParam("details")["nome"]} </Text>
+      <Text style={styles.titulo}>
+        {navigation.getParam("details")["nome"]}
+      </Text>
       {mapCheckboxes()}
     </View>
   );
 }
 
-      // {...navigation.getParam("details")}
+// {...navigation.getParam("details")}
 const styles = StyleSheet.create({
   titulo: {
     fontSize: 60,
     fontWeight: "bold",
     textAlign: "center",
-  }
+  },
 });

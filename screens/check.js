@@ -2,7 +2,9 @@ import BouncyCheckbox from "react-native-bouncy-checkbox";
 import React from "react";
 import { TextInput, StyleSheet, Button, View, Text } from "react-native";
 
-export default function Check(name, changeCheckList) {
+export default function Check(props) {
+  const name = props.name;
+  const changeCheckList = props.changeCheckList;
   return (
     <View>
       <BouncyCheckbox

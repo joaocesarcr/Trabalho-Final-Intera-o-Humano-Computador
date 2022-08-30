@@ -7,7 +7,6 @@ import { TextInput, StyleSheet, Button, View, Text } from "react-native";
 export default function selectStore({ navigation }) {
 
   function mapStores({ navigation }) {
-    //    return stores.map( (x) => Store(x,{navigation}));
     let stores = [];
     for (let i = 0; i < 10; i++) {
       stores.push({
@@ -18,7 +17,7 @@ export default function selectStore({ navigation }) {
         contato: i,
       });
     }
-    return stores.map((x) => Store(x,{navigation}))
+    return stores.map((x) => <Store x={x} navigation={navigation} key={x.nome} />)
   }
 
     return (

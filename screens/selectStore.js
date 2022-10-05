@@ -10,10 +10,10 @@ export default function selectStore({ navigation }) {
     for (let i = 0; i < 10; i++) {
       stores.push({
         nome: "Local " + i,
-        endereco: "Endereço " + i,
+        endereco: "Endereço ",
         tags: ["1"],
         nota: 5,
-        contato: i,
+        contato:""+ i + i + i + i+ "-" + i + i + i + i,
       });
     }
     return stores.map((x) => (
@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
 });
 const stores = [
   {
-    nome: "Local 1",
-    endereco: "Endereço 1",
+    nome: "Endereço",
+    endereco: "Tags",
     tags: ["1"],
     nota: 5,
     contato: 1,

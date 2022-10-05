@@ -20,7 +20,7 @@ const screens = {
   EventDetails: {
     screen: EventDetails,
     navigationOptions: {
-      title: "Meus eventos",
+      title: "Detalhes do evento",
       headerStyle: {
         backgroundColor: "#4c1690",
       },
@@ -30,7 +30,7 @@ const screens = {
   SelectStore: {
     screen: SelectStore,
     navigationOptions: {
-      title: "Meus eventos",
+      title: "Selecionar fornecedor",
       headerStyle: {
         backgroundColor: "#4c1690",
       },
@@ -40,7 +40,7 @@ const screens = {
   StoreDetails: {
     screen: StoreDetails,
     navigationOptions: {
-      title: "Meus eventos",
+      title: "Detalhes do fornecedor",
       headerStyle: {
         backgroundColor: "#4c1690",
       },
@@ -51,7 +51,7 @@ const screens = {
   CheckServices: {
     screen: CheckServices,
     navigationOptions: {
-      title: "Meus eventos",
+      title: "Adicionar serviços",
       headerStyle: {
         backgroundColor: "#4c1690",
       },

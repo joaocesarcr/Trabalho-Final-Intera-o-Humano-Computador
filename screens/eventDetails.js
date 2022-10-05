@@ -26,7 +26,6 @@ export default function EventDetails({ navigation }, name, checkList) {
         style={styles.addButton}
       >
         <View style={styles.addButton}>
-          <Text style={styles.text}> Editar Evento</Text>
         </View>
       </TouchableNativeFeedback>
 

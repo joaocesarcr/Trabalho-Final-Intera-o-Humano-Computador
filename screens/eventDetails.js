@@ -1,14 +1,14 @@
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import React from "react";
-import { TextInput, StyleSheet, Button, View, Text } from "react-native";
-import Service from "./service";
+import { TouchableNativeFeedback, TextInput, StyleSheet, Button, View, Text } from "react-native";
+import Service from "../components/service";
 
 export default function EventDetails({ navigation }, name, checkList) {
   function mapCheckboxes() {
     return navigation
       .getParam("details")
       ["servicosSelecionados"].map((x) => (
-        <Service navigation={navigation} x={x} key={x.nome} />
+        <Service navigation={navigation} x={x} key={x} />
       ));
   }
 
@@ -17,6 +17,19 @@ export default function EventDetails({ navigation }, name, checkList) {
       <Text style={styles.titulo}>
         {navigation.getParam("details")["nome"]}
       </Text>
+      <TouchableNativeFeedback
+        onPress={() =>
+          {
+        }}
+        title="+"
+        color="#200048"
+        style={styles.addButton}
+      >
+        <View style={styles.addButton}>
+          <Text style={styles.text}> Editar Evento</Text>
+        </View>
+      </TouchableNativeFeedback>
+
       {mapCheckboxes()}
     </View>
   );

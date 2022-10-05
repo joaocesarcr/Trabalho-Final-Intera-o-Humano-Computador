@@ -16,23 +16,40 @@ export default function Service(props) {
     <TouchableWithoutFeedback
       onPress={() => navigation.push("SelectStore", { navigation, nome: nome })}
     >
-      <View style={styles.serviceDiv}>
-        <Text> {nome} </Text>
+      <View style={styles.evento}>
+        <Text style={styles.text}> {nome} </Text>
       </View>
     </TouchableWithoutFeedback>
   );
 }
 
 const styles = StyleSheet.create({
-  serviceDiv: {
-    marginTop: 16,
+  evento: {
+    fontWeight: "bold",
+    justifyContent: "center",
+    marginLeft: "5%",
+    width: "90%",
+    height: 80,
+    marginBottom: 10,
+
+    /* menus */
+    backgroundColor: "#4C1690",
+    borderWidth: 1,
+    borderColor:"#000000",
+    marginTop: 8,
     borderWidth: 4,
     borderColor: "#20232a",
-    borderRadius: 6,
     color: "#20232a",
-    fontSize: 20,
     fontWeight: "bold",
+    backgroundColor: "#4C1690",
+    borderWidth: 1,
+    borderColor:"#000000",
   },
+  text: {
+    color: "#ffffff",
+    marginLeft: 10,
+    fontSize: 30,
+  },
+
 });
 
-//    backgroundColor: "#fff",

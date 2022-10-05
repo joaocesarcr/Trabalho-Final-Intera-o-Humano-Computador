@@ -1,11 +1,10 @@
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import React from "react";
-import Store from "./store";
+import Store from "../components/store";
 import { useNavigation } from "@react-navigation/native";
-import { TextInput, StyleSheet, Button, View, Text } from "react-native";
+import { ScrollView, TextInput, StyleSheet, Button, View, Text } from "react-native";
 
 export default function selectStore({ navigation }) {
-
   function mapStores({ navigation }) {
     let stores = [];
     for (let i = 0; i < 10; i++) {
@@ -17,17 +16,25 @@ export default function selectStore({ navigation }) {
         contato: i,
       });
     }
-    return stores.map((x) => <Store x={x} navigation={navigation} key={x.nome} />)
+    return stores.map((x) => (
+      <Store x={x} navigation={navigation} key={x.nome} />
+    ));
   }
 
-    return (
-      <View>
-        <Text> {navigation.getParam("nome")} </Text>
-        {mapStores({ navigation })}
-      </View>
-    );
-  }
-
+  return (
+    <View>
+      <Text style={styles.titulo}> {navigation.getParam("nome")} </Text>
+      <ScrollView>{mapStores({ navigation })}</ScrollView>
+    </View>
+  );
+}
+const styles = StyleSheet.create({
+  titulo: {
+    fontSize: 60,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+});
 const stores = [
   {
     nome: "Local 1",

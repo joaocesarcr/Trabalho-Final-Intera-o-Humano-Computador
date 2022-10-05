@@ -1,23 +1,33 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { TouchableWithoutFeedback, TextInput, StyleSheet, Button, View, Text } from "react-native";
+import {
+  TextInput,
+  TouchableNativeFeedback,
+  StyleSheet,
+  Button,
+  View,
+  Text,
+} from "react-native";
 
 export default function Store(props) {
   const store = props.x;
   const navigation = props.navigation;
   if (store) {
     return (
-      <TouchableWithoutFeedback
+      <TouchableNativeFeedback
         onPress={() =>
           navigation.navigate("StoreDetails", { storeDetails: store })
         }
       >
         <View style={styles.container}>
-          <Text> {store.nome}</Text>
-          <Text> {store.endereco}</Text>
-          <Text> ⭐ {store.nota}</Text>
+          <View style={styles.photo}></View>
+          <View>
+            <Text> {store.nome}</Text>
+            <Text> {store.endereco}</Text>
+            <Text> ⭐ {store.nota}</Text>
+          </View>
         </View>
-      </TouchableWithoutFeedback>
+      </TouchableNativeFeedback>
     );
   } else
     return (
@@ -27,30 +37,32 @@ export default function Store(props) {
     );
 }
 
-/*
- *
-           <Button
-            onPress={() =>
-              navigation.navigate("StoreDetails", { storeDetails: store })
-            }
-            title=""
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-          />
-     
-      <Text> {store.tags[0]}</Text>
-      */
+//         <View >
+//           <View style={styles.photo}> </View>
 
+//        </View>
 const styles = StyleSheet.create({
   container: {
     marginTop: 16,
     paddingVertical: 8,
-    borderWidth: 4,
+    borderWidth: 2,
     borderColor: "#20232a",
     borderRadius: 6,
     backgroundColor: "#fff",
     color: "#20232a",
     fontSize: 30,
     fontWeight: "bold",
+    width: "90%",
+    paddingLeft: "5%",
+    marginLeft: "5%",
+
+    flexDirection: "row",
   },
+  photo: {
+    width: 60,
+    height: 60,
+    backgroundColor: "#aaa",
+    marginRight: "1%",
+  },
+  flex: {},
 });

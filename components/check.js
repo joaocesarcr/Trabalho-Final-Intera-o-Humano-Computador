@@ -9,16 +9,37 @@ export default function Check(props) {
     <View>
       <BouncyCheckbox
         size={25}
-        fillColor="blue"
+        fillColor="#0BCE83"
         unfillColor="#FFFFFF"
         text={name}
-        iconStyle={{ borderColor: "blue" }}
+        iconStyle={{ borderColor: "white" }}
         innerIconStyle={{ borderWidth: 2 }}
+        style={{
+          margin: 5,
+          borderWidth: 1,
+          borderRadius: 3,
+          padding: 10,
+          backgroundColor: "#4c1690",
+        }}
         textStyle={{
           textDecorationLine: "none",
+          color: "white",
         }}
-        onPress={(isChecked: boolean) => {changeCheckList(name,isChecked)}}
+        onPress={(isChecked: boolean) => {
+          changeCheckList(name, isChecked);
+        }}
       />
     </View>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    margin: 3,
+    color: "#4C1690",
+  },
+  input: {
+    borderWidth: 1,
+    padding: 5,
+    borderRadius: 3,
+  },
+});

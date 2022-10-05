@@ -1,47 +1,66 @@
-import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
-import CheckServices from '../screens/checkServices';
-import Second from '../screens/second';
-import Accel from '../screens/accel';
-import Parte from '../screens/parte2';
-import StoreDetails from '../screens/storeDetails';
-import SelectStore from '../screens/selectStore';
-import MyEvents from '../screens/myEvents';
-import EventDetails from '../screens/eventDetails';
+import { createStackNavigator } from "react-navigation-stack";
+import { createAppContainer } from "react-navigation";
+import CheckServices from "../screens/checkServices";
+import StoreDetails from "../screens/storeDetails";
+import SelectStore from "../screens/selectStore";
+import MyEvents from "../screens/myEvents";
+import EventDetails from "../screens/eventDetails";
 
 const screens = {
   MyEvents: {
     screen: MyEvents,
+    navigationOptions: {
+      title: "Meus eventos",
+      headerStyle: {
+        backgroundColor: "#4c1690",
+      },
+      headerTitleStyle: { color: "white" },
+    },
   },
-
   EventDetails: {
     screen: EventDetails,
+    navigationOptions: {
+      title: "Meus eventos",
+      headerStyle: {
+        backgroundColor: "#4c1690",
+      },
+      headerTitleStyle: { color: "white" },
+    },
   },
   SelectStore: {
     screen: SelectStore,
+    navigationOptions: {
+      title: "Meus eventos",
+      headerStyle: {
+        backgroundColor: "#4c1690",
+      },
+      headerTitleStyle: { color: "white" },
+    },
   },
   StoreDetails: {
     screen: StoreDetails,
+    navigationOptions: {
+      title: "Meus eventos",
+      headerStyle: {
+        backgroundColor: "#4c1690",
+      },
+      headerTitleStyle: { color: "white" },
+    },
   },
-
 
   CheckServices: {
     screen: CheckServices,
+    navigationOptions: {
+      title: "Meus eventos",
+      headerStyle: {
+        backgroundColor: "#4c1690",
+      },
+      headerTitleStyle: { color: "white" },
+    },
   },
-  Parte: {
-    screen: Parte,
-  },
-  Accel: {
-    screen: Accel,
-  },
-  Second: {
-    screen: Second,
-  }
 };
 
 // home stack navigator screens
 const HomeStack = createStackNavigator(screens);
 
 export default createAppContainer(HomeStack);
-
-

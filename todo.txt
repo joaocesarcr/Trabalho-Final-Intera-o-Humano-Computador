@@ -1,0 +1,17 @@
+Habilitar remover/arquivar eventos
+Mostrar como completo após salvar
+Separar entre criador e oferecedor
+Imagens e informaçoes melhores
+Box de local melhor
+
+Criar Evento, escolher servicos, definir servicos, arquivar evento
+Criar Evento, escolher servicos, definir servicos, excluir evento
+
+Done: 
+  Alterar botoes CheckServices
+
+Nosso grupo é o Qeventos, facilita a organização de eventos e oferece visibilidade a fornecedores
+
+Nessa etapa foram implementadas novas interfaces, como registro e cadastro como fornecedor de servicos
+
+Um fornecedor pode marcar os servicos oferecidos e pode editá-los, informando nome, endereço, descrição e seu contato
